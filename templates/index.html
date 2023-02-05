@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Shaman</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    
+</head>
+<body>
+    <section class="modal" id="modal">
+        <section class="modal-content">
+            <h1>Welcome</h1>
+            <p>DO NOT TAKE THIS MANS ADVICE. HE IS A CRAZY ASS SHAMAN. THANK YOU AND GOOD NIGHT ^3^</p>
+            <P>THE SHAMAN HAS BEEN AROUND FOR THOUSANDS OF YEARS. HE GAVE EVERYONE BAD ADVICE THROUGHOUT HISTORY.</P>
+            <button id = "modalBtn">Continue</button>
+        </section>
+    </section>
+    <nav>
+        <div class="right-header">
+            <a>Virtual Shaman</a>
+        </div>
+    </nav> 
+    <video autoplay>
+        <source  src="Sample Video.mp4">
+        Your browser does not support the video tag.
+    </video >
+    <section class="category-orb" id="one">
+        <a >
+            <img src="/static/imgs/blue_orb.png" alt="blue">
+            <p>Financial <br> Advice</p>
+        </a>
+    </section>
+    <section class="category-orb" id="two">
+        <a >
+            <img src="/static/imgs/yellow_orb.png" alt="yellow">
+            <p>Romantic <br> Advice</p>
+        </a>
+    </section>
+    <section class="category-orb" id="three">
+        <a >
+            <img src="/static/imgs/white_orb.png" alt="white">
+            <p>Career <br> Advice</p>
+        </a>
+    </section>
+    <section class="category-orb" id="four">
+        <a >
+            <img src="/static/imgs/blue_orb.png" alt="blue">
+            <p>Life <br> Advice</p>
+        </a>    
+    </section>
+    <section class="category-orb" id="five">
+        <a >
+            <img src="/static/imgs/yellow_orb.png" alt="yellow">
+            <p>School <br> Advice</p>
+        </a>
+    </section>
+    <section class="category-orb" id="six">
+        <a >
+            <img src="/static/imgs/white_orb.png" alt="white">
+            <p>Friendship<br> Advice</p>
+        </a>
+    </section>
+    <section class="output" id="output">
+        <p id="output-text">Blah Blah Blah. Bad Advice. DO NOT TAKE</p>
+    </section>
+    <button class="retry-btn">More Advice?</button>
+    <script src="{{url_for('static', filename='staticjs/index.js')}}"></script>
+    <script src="{{url_for('static', filename='staticjs/prediction.js')}}"></script>
+    <!--script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script> -->
+    <!-- <script>
+        const modalBtn = document.getElementById("modalBtn");
+        modalBtn.addEventListener("click", function() {
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
+        });
+    </script> -->
+</body>
+</html>
