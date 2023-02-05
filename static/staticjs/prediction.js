@@ -108,6 +108,92 @@ let careerAdviceVerbs = [
    "furthered",
    "improved"
 ]
+
+//list of Friendship verbs
+let friendVerbs = [
+    "bond",
+    "connect",
+    "unite",
+    "socilize",
+    "support",
+    "encourage",
+    "trust",
+    "respect",
+    "strike up",
+    "share",
+    "friended"
+]
+
+let friendWords = [
+    "camaraderie",
+    "companionship",
+    "affinity",
+    "rapport",
+    "loyalty",
+    "mutual support",
+    "mutual repsect",
+    "closeness",
+    "acceptance",
+    "lasting"
+]
+
+//List of school advice
+let schoolWords = [
+    "study",
+    "procrastinate",
+    "stress",
+    "sleep",
+    "use ChatGPT",
+    "sleep in",
+    "read",
+    "pretend to work",
+    "HELP, I'M STuc...",
+    "breakdown",
+    "explore"
+]
+//List of clothing
+let clothingWords = [
+    "shirt",
+    "pants",
+    "shoes",
+    "shorts",
+    "dress",
+    "hat",
+    ""
+]
+//List of clothing adjuctives
+let clothingAdj = [
+    "purple",
+    "red",
+    "blue",
+    "yellow",
+    "green",
+    "lavender",
+    "pink",
+    "fluffy",
+    "silky",
+    "shiny",
+    "stretchy",
+    "spiffy",
+    "pompus",
+    "80's",
+    "tight",
+    "loose"
+]
+//List of life advice words
+let lifeWords = [
+    "sleep",
+    "water drinking",
+    "love",
+    "passive-comments",
+    "conforming",
+    "complacent",
+    "runing... don't stop..",
+    "smile",
+    "bottle up",
+    "complaining",
+    "HELP, I'M TRAPed.."
+]
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -136,7 +222,7 @@ function makeString(){
     let outputString = "";
     if(command == "Romantic  Advice"){
         hideOrbs();
-        let randomPhrase = getRandomInt(2);
+        let randomPhrase = getRandomInt(5);
         let randomWord  = romanticWords[getRandomInt(romanticWords.length-1)];
         let randomWord2  = romanticWords[getRandomInt(romanticWords.length-1)]; 
         console.log(randomPhrase);
@@ -153,6 +239,21 @@ function makeString(){
                 return;
             case 2:
                 output.textContent = "You shall fall head over heel for your " + randomWord + " love in the morning after yonder yester fortnight.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 3:
+                output.textContent = "You will need to " + randomWord + " to " + randomWord2 ;
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 4:
+                output.textContent = "Thy " + randomWord + " love shall be requited within the next " + getRandomInt(40) + " years.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 5:
+                output.textContent = "Be wary of those in " + clothingAdj[getRandomInt(15)] + " " + clothingWords[getRandomInt(4)] + ", for one has a secret surprise for you.";
                 outputString = output.textContent;
                 sendString(outputString);
                 return;
@@ -187,18 +288,23 @@ function makeString(){
                 output.textContent = "Paying  off your " + randomWord + " is essential in preventing blood sucking debt collectors";
                 outputString = output.textContent;
                 sendString(outputString);
-                    return;
+                return;
+            case 4:
+                output.textContent = "The crypto market, evolving the field of " + randomWord + ", will set you free (of all your money).";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
         }
     }else if(command == "Career  Advice"){
         output.textContent = "Career";
         hideOrbs();
-        let randomPhrase = getRandomInt(4);
+        let randomPhrase = getRandomInt(7);
         let randomWord  = careerAdviceWords[getRandomInt(careerAdviceWords.length-1)];
         randomWord.toLowerCase();
         let randomWord2  = careerAdviceWords[getRandomInt(careerAdviceWords.length-1)]; 
         randomWord2.toLowerCase();
         let randomVerb  = careerAdviceVerbs[getRandomInt(careerAdviceVerbs.length-1)]; 
-        randomWord2.toLowerCase();
+        randomVerb.toLowerCase();
         console.log(randomPhrase);
         switch(randomPhrase){
             case 0:
@@ -220,17 +326,142 @@ function makeString(){
                 output.textContent = "Paying  off your " + randomWord + " is essential in preventing blood sucking debt collectors";
                 outputString = output.textContent;
                 sendString(outputString);
-                    return;
+                return;
+            case 4:
+                output.textContent = "Success in a career is not just about " + randomWord + " but it's not also about " + randomWord2 + ".";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 5:
+                output.textContent = "Your career is a" + randomWord2 + "not just a " + randomWord + " and it's up to you to chart " + randomWord + ".";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 6:
+                output.textContent = "Finding balance between your" + randomVerb + " and " + randomWord2 + "is crucial for success in your career.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 7:
+                output.textContent = "You are not gonna succeed practice with " +  randomWord2 + " and " + randomVerb + ".";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
         }
     }else if(command == "Life  Advice"){
         output.textContent = "Life";
         hideOrbs();
+        let randomPhrase = getRandomInt(3);
+        let randomWord  = lifeWords[getRandomInt(lifeWords.length-1)];
+        randomWord.toLowerCase();
+        let randomAdj = clothingAdj[getRandomInt(clothingAdj.length-1)];
+        randomAdj.toLowerCase();
+        let randomClothes = clothingWords[(clothingWords.length-1)];
+        randomClothes.toLowerCase();
+        console.log(randomPhrase);
+        switch(randomPhrase){
+            case 0:
+                output.textContent = "Make sure to " + randomWord + " around others, they need that.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 1:
+                output.textContent = "Next time you " + randomWord + " in " + randomClothes + ", expect a fulfilling day!";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 2:
+                output.textContent = "Life is like a Dallas Cowboys game, " + randomWord + " will make it better.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 3:
+                output.textContent = "With enough " + randomWord + ", your day will be brighter!";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+        }
     }else if(command == "School  Advice"){
         output.textContent = "School";
         hideOrbs();
+        let randomPhrase = getRandomInt(4);
+        let randomWord  = schoolWords[getRandomInt(schoolWords.length-1)];
+        randomWord.toLowerCase();
+        let randomAdj = clothingAdj[getRandomInt(clothingAdj.length-1)];
+        randomAdj.toLowerCase();
+        let randomClothes = clothingWords[(clothingWords.length-1)];
+        randomClothes.toLowerCase();
+        console.log(randomPhrase);
+        switch(randomPhrase){
+            case 0:
+                output.textContent = "Make sure to " + randomWord + " every school night to prepare for the next day.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 1:
+                output.textContent = "Come next Thursday, fortune befalls those in " + randomAdj + " " + randomClothes + " on campus.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 2:
+                output.textContent = "Plan to " + randomWord + " at least " + getRandomInt(4) + " times next week... you've been warned...";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 3:
+                output.textContent = "All the best CS students " + randomWord + " before tests, trust me.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 4:
+                output.textContent = "For academic luck this work, don't forget your " + randomAdj + " " + randomClothes + ", hope you (finally) did laundry this week.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+        }
     }else if(command == "Friendship Advice"){
         output.textContent = "Friendship";
         hideOrbs();
+        let randomPhrase = getRandomInt(5);
+        let randomWord  = friendVerbs[getRandomInt(friendVerbs.length-1)];
+        randomWord.toLowerCase();
+        let randomWord2  = friendVerbs[getRandomInt(friendVerbs.length-1)];
+        randomWord2.toLowerCase();
+        let randomVerb  = friendWords[getRandomInt(friendWords.length-1)]; 
+        randomVerb.toLowerCase();
+        console.log(randomPhrase);
+        switch(randomPhrase){
+            case 0:
+                output.textContent = "friendship will be like " + randomVerb + " and " + randomWord + ".";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 1:
+                output.textContent = "You substain friendship through your " + randomVerb + ".";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 2:
+                output.textContent = "Why would you maintain friendship through " + randomVerb + " and practice with " + randomWord2;         
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 3:
+                output.textContent = "A true friend is someone who brings" + randomVerb + "and " + randomWord + ".";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 4:
+                output.textContent = "Friendship is a"  + randomVerb  + " and " + randomWord2 + " that lasts a lifetime.";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+            case 5:
+                output.textContent = "Friendship is not about " + randomWord + " and not about " + randomVerb + ".";
+                outputString = output.textContent;
+                sendString(outputString);
+                return;
+        }
     }
 } 
 
