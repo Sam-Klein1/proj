@@ -149,7 +149,8 @@ let schoolWords = [
     "pretend to work",
     "HELP, I'M STuc...",
     "breakdown",
-    "explore"
+    "explore",
+    "fake it"
 ]
 //List of clothing
 let clothingWords = [
@@ -158,8 +159,7 @@ let clothingWords = [
     "shoes",
     "shorts",
     "dress",
-    "hat",
-
+    "hat"
 ]
 //List of clothing adjuctives
 let clothingAdj = [
@@ -295,7 +295,7 @@ function makeString(){
                 sendString(outputString);
                 return;
             case 5:
-                output.textContent = "Stepping away from " + randomWord + " will gave you better " + randomPhrase;
+                output.textContent = "Stepping away from " + randomWord + " will give you better " + randomWord2;
                 outputString = output.textContent;
                 sendString(outputString);
                 return;
@@ -338,7 +338,7 @@ function makeString(){
                 sendString(outputString);
                 return;
             case 5:
-                output.textContent = "Your career is a" + randomWord2 + "not just a " + randomWord + " and it's up to you to chart " + randomWord + ".";
+                output.textContent = "Your career is a" + randomWord2 + "not just a " + randomWord + " and it's up to you to chart " + randomVerb + ".";
                 outputString = output.textContent;
                 sendString(outputString);
                 return;
@@ -386,12 +386,12 @@ function makeString(){
                 sendString(outputString);
                 return;
             case 4:
-                output.textContent = "Practicing your normal routine of " + randomVerb + " isn't a good idea";
+                output.textContent = "Practicing your normal routine of " + randomWord + " isn't a good idea";
                 outputString = output.textContent;
                 sendString(outputString);
                 return;
             case 5:
-                output.textContent = " Do more pratice of " + randomVerb + " with " + randomWord2 + " to spice your life ";
+                output.textContent = " Do more pratice of " + randomWord + " with " + randomWord2 + " to spice your life ";
                 outputString = output.textContent;
                 sendString(outputString);
                 return;
@@ -403,6 +403,8 @@ function makeString(){
         let randomPhrase = getRandomInt(5);
         let randomWord  = schoolWords[getRandomInt(schoolWords.length-1)];
         randomWord.toLowerCase();
+        let randomWord2  = schoolWords[getRandomInt(schoolWords.length-1)];
+        randomWord2.toLowerCase();
         let randomAdj = clothingAdj[getRandomInt(clothingAdj.length-1)];
         randomAdj.toLowerCase();
         let randomClothes = clothingWords[(clothingWords.length-1)];
@@ -435,7 +437,7 @@ function makeString(){
                 sendString(outputString);
                 return;
             case 5:
-                output.textContent = "Binghamton students should practice " + randomPhrase + " with the combination of " + randomWord + ".";
+                output.textContent = "Binghamton students should practice " + randomWord + " with the combination of " + randomWord2 + ".";
                 outputString = output.textContent;
                 sendString(outputString);
                 return;
